@@ -33,7 +33,6 @@ public class Doctor extends User
         return availableAppointments;
     }
 
-    //--------METHODS--------//
     public void addAvailableAppointment(String date, String time)
     {
         availableAppointments.add(new Doctor.AvailableAppointment(date,time));
