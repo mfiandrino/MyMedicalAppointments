@@ -1,6 +1,7 @@
 package ui;
 
 import models.Doctor;
+import models.Patient;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,7 +13,7 @@ public class UIMenu
     public static void showMenu()
     {
         System.out.println("Welcome to My Appointments");
-        System.out.println("Choose an option");
+        System.out.println("Login");
 
         int response = 0;
         do
@@ -57,12 +58,12 @@ public class UIMenu
         doctors.add(new Doctor("Max Verstappen", "maxVerstappen@mail.com"));
         doctors.add(new Doctor("Lando Norris", "landoNorris@mail.com"));
         doctors.add(new Doctor("Alex Albon", "alexAlbon@mail.com"));
-        /*
+
         ArrayList<Patient> patients = new ArrayList<>();
         patients.add(new Patient("John Travolta", "JohnTra@mail.com"));
         patients.add(new Patient("Charles Chaplin", "charlesChaplin@mail.com"));
         patients.add(new Patient("Michael Burry", "michaelBurry@mail.com"));
-        */
+
 
         boolean emailCorrect = false;
         do
@@ -78,7 +79,7 @@ public class UIMenu
                     {
                         emailCorrect = true;
                         doctorLogged = d;
-                        //Go to doctor menu
+                        UIDoctorMenu.showDoctorMenu();
                     }
                 }
             }
