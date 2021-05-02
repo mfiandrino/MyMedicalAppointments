@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class UIMenu
 {
     public static Doctor doctorLogged;
+    public static Patient patientLogged;
 
     public static void showMenu()
     {
@@ -85,8 +86,15 @@ public class UIMenu
             }
             if (userType == 2)
             {
-                System.out.println("Sorry, this section will be ready soon");
-                emailCorrect = true;
+                for (Patient p: patients)
+                {
+                    if (p.getEmail().equals(email))
+                    {
+                        emailCorrect = true;
+                        patientLogged = p;
+                        UIPatientMenu.showPatientMenu();
+                    }
+                }
             }
         } while (!emailCorrect);
     }
